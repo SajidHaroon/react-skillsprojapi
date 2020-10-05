@@ -2,11 +2,11 @@ const expresss = require ('express')
 const mongoose = require ('mongoose')
 const config = require ('./utils/config')
 const skillRouter = require('./controllers/SkillController')
-//var cors = require('cors')
+var cors = require('cors')
 const app = expresss()
 app.use(expresss.json())   // We need this json parser otherwise the post request will not work
 
-//app.use(cors())
+app.use(cors())
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
