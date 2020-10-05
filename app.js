@@ -8,6 +8,11 @@ app.use(expresss.json())   // We need this json parser otherwise the post reques
 
 //app.use(cors())
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 app.get('/', (req,res)=>{
     console.log('hello World')
     res.send('<h1>Hello oooh</h1>')
